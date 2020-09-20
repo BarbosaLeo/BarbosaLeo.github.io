@@ -1,4 +1,6 @@
-
+body{
+    background-color: #b9b9b9;
+}
 .header{
     background-color: rgb(30,30,30);
     overflow: hidden;
