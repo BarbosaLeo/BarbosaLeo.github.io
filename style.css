@@ -58,3 +58,6 @@ div.main{
     color: #f7f7f7;
     text-decoration: none;
 }
+canvas{
+    background-color: rgb(0,0,0);
+}
