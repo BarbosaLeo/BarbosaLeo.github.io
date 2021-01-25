@@ -1,34 +1,58 @@
 var playerScore;
-var myGamePiece;
+var playerAircraft;
 var gameObstacles = [];
+var gameIsRunning = false;
 
 function startGame() {
-        playerScore = new component("30px","Consolas", "white", 1200, 60, "text"); 
-        myGamePiece = new component(64,64,"spf_w1.png", 900, 400, "image");
-        myGameArea.start();
+    myGameArea.create();
+        playerStart = new component("50px", "Consolas", "white", 650, 250, "text")
+        playerControl_1 = new component("30px", "Consolas", "white", 50, 60, "text")
+        playerControl_2 = new component("20px", "Consolas", "white", 50, 90, "text")
+        playerScore = new component("30px","Consolas", "white", 1400, 60, "text"); 
+        playerAircraft = new component(64,64,"img/spf_w1.png", 900, 400, "image");
+
+        playerStart.text = "Clique para Iniciar!"
+        playerControl_1.text = "Pressione A e D para mover";
+        playerControl_2.text = "Pressione S para cancelar o movimento"
+        playerStart.update();
+        playerControl_1.update();
+        playerControl_2.update();
+        playerScore.update();
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
-    start : function() {
+
+    create : function(){
         this.canvas.width = 1900;
         this.canvas.height = 500;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[7]);
         this.frameNo = 0;
+        window.addEventListener('click', (e) =>{
+            if(!gameIsRunning && e.target == this.canvas) {
+                myGameArea.start();
+                gameIsRunning = true;
+            }
+        })
+    },
+
+    start : function() {
         this.interval = setInterval(updateGameArea, 20);
         window.addEventListener('keydown', (e) => {
-            if(e.code === "ArrowLeft")moveleft()
-            if(e.code === "ArrowRight")moveright()
-          })
-          window.addEventListener('keyup', function (e) {
-            clearmove()
-            myGameArea.key = false;
+            if(e.key === "a")moveleft()
+            else if(e.key === "d")moveright()
+            else if(e.key === "s"){
+                clearmove();
+                myGameArea.key = false;;
+            }
           })
         },
+
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
+
     stop : function() {
         clearInterval(this.interval);
     }
@@ -100,7 +124,8 @@ function everyInterval(n){
 function updateGameArea() {
     var x, y;
     for (i = 0; i < gameObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(gameObstacles[i])) {
+        if (playerAircraft.crashWith(gameObstacles[i])) {
+        gameIsRunning = false;
         myGameArea.stop();
         return;
         }
@@ -115,37 +140,47 @@ function updateGameArea() {
         xSpawn = Math.floor(Math.random()*(xMax-xMin+1)+xMin);
         x = xSpawn;
         y = -100;
-        gameObstacles.push(new component(64, 64, "sp_meteorite.png", x, y, "image"))
+        gameObstacles.push(new component(64, 64, "img/sp_meteorite.png", x, y, "image"))
     }
     for (i=0; i< gameObstacles.length; i += 1){
         gameObstacles[i].y += 3;
         gameObstacles[i].update();
     }
 
+    playerControl_1.update();
+    playerControl_2.update();
     playerScore.text = "SCORE: " + Math.round(myGameArea.frameNo/60);
     playerScore.update();
 
-    myGamePiece.newPos();
-    myGamePiece.update();
-}
-
-function moveup() {
-    myGamePiece.speedY = -1; 
-}
-
-function movedown() {
-    myGamePiece.speedY = 1; 
+    playerAircraft.newPos();
+    playerAircraft.update();
 }
 
 function moveleft() {
-    myGamePiece.speedX = -10; 
+    playerAircraft.speedX = -10; 
 }
 
 function moveright() {
-    myGamePiece.speedX = 10; 
+    playerAircraft.speedX = 10; 
 }
 
 function clearmove() {
-    myGamePiece.speedX = 0; 
-    myGamePiece.speedY = 0; 
+    playerAircraft.speedX = 0; 
+    playerAircraft.speedY = 0; 
 }
+
+
+// falta implementar!!!!
+var modal = document.getElementById("modal");
+var img = document.getElementById("img");
+var modalImg = document.getElementById("modalImg");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+}
+//falta implementar!!!!
+var span = document.getElementsByClassName("close")[0];
+if(span != null){
+span.onclick = function(){
+    modal.style.display = "none";
+}}

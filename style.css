@@ -22,7 +22,7 @@ body{
 }
 div.bg1{
     color: #f5f5f5;
-    background-image: url("background1.png");
+    background-image: url("img/background1.png");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 15%;
@@ -58,6 +58,82 @@ div.main{
     color: #f7f7f7;
     text-decoration: none;
 }
+
+row::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.images{
+    float: left;
+}
+
+img{
+    transition: .3s;
+    padding: 2px;
+    float: left;
+    width: 33%;
+    max-width: 700px;
+}
+img:hover{
+    transform: scale(1.1);
+    margin: 0 auto;
+}
+
+#img{
+    border-radius: 5px;
+    cursor: pointer;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.modal-content{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.modal-content{  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close{
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    transition: .2s;
+}
+.close:hover,
+.close:focus{
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 canvas{
     background-color: rgb(0,0,0);
 }
