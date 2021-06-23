@@ -1,30 +1,34 @@
 var playerScore;
 var playerAircraft;
+var playerSpeed = 5;
 var gameObstacles = [];
+var gameUpgrades = [];
+var obstacleSpawnRate = 50;
+var meteoriteVelocity = 1;
 var gameIsRunning = false;
 
 function startGame() {
     myGameArea.create();
-        playerStart = new component("50px", "Consolas", "white", 650, 250, "text")
-        playerControl_1 = new component("30px", "Consolas", "white", 50, 60, "text")
-        playerControl_2 = new component("20px", "Consolas", "white", 50, 90, "text")
-        playerScore = new component("30px","Consolas", "white", 1400, 60, "text"); 
-        playerAircraft = new component(64,64,"img/spf_w1.png", 900, 400, "image");
+        playerStart = new component("50px", "Consolas", "white", 650, 250, "text");
+        playerControl_1 = new component("30px", "Consolas", "white", 50, 60, "text");
+        playerControl_2 = new component("20px", "Consolas", "white", 50, 90, "text");
+        playerScoreText = new component("30px","Consolas", "white", 1400, 60, "text"); 
+        playerAircraft = new component(64,64,"img/spf_w2.gif", 900, 400, "image");
 
-        playerStart.text = "Clique para Iniciar!"
-        playerControl_1.text = "Pressione A e D para mover";
-        playerControl_2.text = "Pressione S para cancelar o movimento"
+        playerStart.text = "click here to Start!"
+        playerControl_1.text = "Press A and D to move";
+        playerControl_2.text = "Press S to stop movement"
         playerStart.update();
         playerControl_1.update();
         playerControl_2.update();
-        playerScore.update();
+        playerScoreText.update();
 }
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
 
     create : function(){
-        this.canvas.width = 1900;
+        this.canvas.width = 1920;
         this.canvas.height = 500;
         this.context = this.canvas.getContext("2d");
         document.body.insertBefore(this.canvas, document.body.childNodes[7]);
@@ -54,6 +58,9 @@ var myGameArea = {
     },
 
     stop : function() {
+        gameEndScreen = new component("50px", "Consolas", "white", 650, 250, "text");
+        gameEndScreen.text = "reload page to play again"
+        gameEndScreen.update();
         clearInterval(this.interval);
     }
 }
@@ -123,52 +130,61 @@ function everyInterval(n){
 
 function updateGameArea() {
     var x, y;
-    for (i = 0; i < gameObstacles.length; i += 1) {
+    var playerScore =  Math.round(myGameArea.frameNo/60);
+
+    for (i = 0; i < gameObstacles.length; i++) {
         if (playerAircraft.crashWith(gameObstacles[i])) {
-        gameIsRunning = false;
         myGameArea.stop();
-        return;
+        gameIsRunning = false;
+        }
+    }
+    for (i=0;i<gameUpgrades.length;i++){
+        if(playerAircraft.crashWith(gameUpgrades[i])){
+            playerSpeed+=1;
         }
     }
 
     myGameArea.clear();
     myGameArea.frameNo += 1;
 
-    if(myGameArea.frameNo == 1 || everyInterval(100)){
+    if(myGameArea.frameNo == 1 || everyInterval(obstacleSpawnRate)){
         xMin =64;
-        xMax =1800;
+        xMax = 1800;
         xSpawn = Math.floor(Math.random()*(xMax-xMin+1)+xMin);
         x = xSpawn;
-        y = -100;
-        gameObstacles.push(new component(64, 64, "img/sp_meteorite.png", x, y, "image"))
+        y = -50;
+        gameObstacles.push(new component(64, 64, "img/meteorites-1.png", x, y, "image"))
     }
     for (i=0; i< gameObstacles.length; i += 1){
-        gameObstacles[i].y += 3;
+        gameObstacles[i].y += meteoriteVelocity;
         gameObstacles[i].update();
+    }
+    if(everyInterval(100)){
+        obstacleSpawnRate -=.5;
+        meteoriteVelocity +=.1;
     }
 
     playerControl_1.update();
     playerControl_2.update();
-    playerScore.text = "SCORE: " + Math.round(myGameArea.frameNo/60);
-    playerScore.update();
+    playerScoreText.text = "SCORE: " + playerScore;
+    playerScoreText.update();
 
     playerAircraft.newPos();
     playerAircraft.update();
 }
 
 function moveleft() {
-    playerAircraft.speedX = -10; 
+    playerAircraft.speedX = -playerSpeed; 
 }
 
 function moveright() {
-    playerAircraft.speedX = 10; 
+    playerAircraft.speedX = playerSpeed; 
 }
 
 function clearmove() {
     playerAircraft.speedX = 0; 
     playerAircraft.speedY = 0; 
 }
-
 
 // falta implementar!!!!
 var modal = document.getElementById("modal");
