@@ -67,7 +67,8 @@ row::after{
 
 .images
 .project1
-.project2{
+.project2
+.gameframe{
     float: left;
 }
 
