@@ -7,63 +7,64 @@ var obstacleSpawnRate = 50;
 var meteoriteVelocity = 1;
 var gameIsRunning = false;
 
-function startGame() {
-    myGameArea.create();
-        playerStart = new component("50px", "Consolas", "white", 650, 250, "text");
-        playerControl_1 = new component("30px", "Consolas", "white", 50, 60, "text");
-        playerControl_2 = new component("20px", "Consolas", "white", 50, 90, "text");
-        playerScoreText = new component("30px","Consolas", "white", 1400, 60, "text"); 
-        playerAircraft = new component(64,64,"img/spf_w2.gif", 900, 400, "image");
 
-        playerStart.text = "click here to Start!"
-        playerControl_1.text = "Press A and D to move";
-        playerControl_2.text = "Press S to stop movement"
-        playerStart.update();
-        playerControl_1.update();
-        playerControl_2.update();
-        playerScoreText.update();
-}
+//function startGame() {
+//    myGameArea.create();
+//        playerStart = new component("50px", "Consolas", "white", 650, 250, "text");
+//        playerControl_1 = new component("30px", "Consolas", "white", 50, 60, "text");
+//        playerControl_2 = new component("20px", "Consolas", "white", 50, 90, "text");
+//        playerScoreText = new component("30px","Consolas", "white", 1400, 60, "text"); 
+//        playerAircraft = new component(64,64,"img/spf_w2.gif", 900, 400, "image");
 
-var myGameArea = {
-    canvas : document.createElement("canvas"),
+//        playerStart.text = "click here to Start!"
+//        playerControl_1.text = "Press A and D to move";
+//        playerControl_2.text = "Press S to stop movement"
+//        playerStart.update();
+//        playerControl_1.update();
+//        playerControl_2.update();
+//        playerScoreText.update();
+//}
 
-    create : function(){
-        this.canvas.width = 1920;
-        this.canvas.height = 500;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[7]);
-        this.frameNo = 0;
-        window.addEventListener('click', (e) =>{
-            if(!gameIsRunning && e.target == this.canvas) {
-                myGameArea.start();
-                gameIsRunning = true;
-            }
-        })
-    },
+//var myGameArea = {
+//    canvas : document.createElement("canvas"),
 
-    start : function() {
-        this.interval = setInterval(updateGameArea, 20);
-        window.addEventListener('keydown', (e) => {
-            if(e.key === "a")moveleft()
-            else if(e.key === "d")moveright()
-            else if(e.key === "s"){
-                clearmove();
-                myGameArea.key = false;;
-            }
-          })
-        },
+//    create : function(){
+//        this.canvas.width = 1920;
+//        this.canvas.height = 500;
+//        this.context = this.canvas.getContext("2d");
+//        document.body.insertBefore(this.canvas, document.body.childNodes[7]);
+//        this.frameNo = 0;
+//        window.addEventListener('click', (e) =>{
+//            if(!gameIsRunning && e.target == this.canvas) {
+//                myGameArea.start();
+//                gameIsRunning = true;
+//            }
+//        })
+//    },
 
-    clear : function() {
-        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    },
+//    start : function() {
+//        this.interval = setInterval(updateGameArea, 20);
+//        window.addEventListener('keydown', (e) => {
+//            if(e.key === "a")moveleft()
+//            else if(e.key === "d")moveright()
+//            else if(e.key === "s"){
+//                clearmove();
+//                myGameArea.key = false;;
+//            }
+//          })
+//        },
 
-    stop : function() {
-        gameEndScreen = new component("50px", "Consolas", "white", 650, 250, "text");
-        gameEndScreen.text = "reload page to play again"
-        gameEndScreen.update();
-        clearInterval(this.interval);
-    }
-}
+//    clear : function() {
+//        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+//    },
+
+//    stop : function() {
+//        gameEndScreen = new component("50px", "Consolas", "white", 650, 250, "text");
+//        gameEndScreen.text = "reload page to play again"
+//        gameEndScreen.update();
+//        clearInterval(this.interval);
+//    }
+//}
 
 function component(width, height, color, x, y, type) {
     this.type = type;

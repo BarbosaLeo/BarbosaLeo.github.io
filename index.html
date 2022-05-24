@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -77,9 +79,9 @@
             </div>
             <div>
                 <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #828080"></canvas>
-                    <script src="Build/InfiniteHangar.loader.js"></script>
-                    <script>
-                      createUnityInstance(document.querySelector("#unity-canvas"), {
+                <script src="Build/InfiniteHangar.loader.js"></script>
+                <script>
+                    createUnityInstance(document.querySelector("#unity-canvas"), {
                         dataUrl: "Build/InfiniteHangar.data.gz",
                         frameworkUrl: "Build/InfiniteHangar.framework.js.gz",
                         codeUrl: "Build/InfiniteHangar.wasm.gz",
@@ -89,8 +91,8 @@
                         productVersion: "0.1",
                         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
                         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-                      });
-                    </script>
+                    });
+                </script>
             </div>
             <!-- canvas vai aqui -->
         </div>
