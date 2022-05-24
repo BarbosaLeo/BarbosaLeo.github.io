@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body onload="startGame()">
+        <!-- <div class="header">
+            <a href="#">[PLACEHOLDER]</a>
+        </div> -->
+        <div class="bg1">
+            <h1 class="quote">"Everything here</h1>
+            <h1 class="quote">is made by me."</h1>
+            <p class="author">- Me</p>
+        </div>
+        <div class="main">
+            <h2>"Hello world!!"</h2>
+
+            <h2>Some of my 3D models - Blender3D</h2>
+            <div class="row">
+                <div class="images">
+                    <img id="img" src="img/extinguisher_render.png">
+                    <img id="img" src="img/f15_render.png">
+                    <img id="img" src="img/SimpleBow_render.png">
+                    <img id="img" src="img/Jet_render.png">
+                    <img id="img" src="img/f5-tiger_render.png">
+                </div>
+            </div>
+            <div class="row">
+                <h1>Unity Projects</h1>
+                <h3>WIP - from may/2021 to current time</h1>
+                <div class="images">
+                    <img id="img" src="img/game_basic_cycle.gif">
+                    <img id="img" src="img/dash_working.gif">
+                    <img id="img" src="img/camera_test_pos.gif">
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Hangar showcase and customization (2020)</h3>
+                <div class="images">
+                    <img id="img" src="img/hangar_showcase.gif">
+                    <img id="img" src="img/hangar_customize.gif">
+                </div>
+            </div>
+            
+            <!-- 
+            <div class="row">
+                <div class="modal" id="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modalImg">
+                </div>
+            </div> -->
+
+            <div class="row">
+                <h1>Unreal Projects</h1>
+                <h3>Modular fence BP and Model</h2>
+                <div class="images">
+                    <img id="img" src="img/unreal_modular_fence_bp.gif">
+                    <img id="img" src="img/unreal_modular_fence.gif">
+                </div>
+            </div>
+            <div class="row">
+                <h3>A time-based FPS run & gun (very old)</h2>
+                <div class="images">
+                    <img id="img" src="img/unreal_corridor_gameplay.gif">
+                    <img id="img" src="img/unreal_corridor_finish.gif">
+                </div>
+            </div>
+
+
+            <h2>...and there is a game below too!</progess></h2>
+            <!--
+            <div class="gameframe">
+                <iframe src="https://itch.io/embed/967755" height="167" width="552" frameborder="0"><a href="https://barbosaleo.itch.io/spacefighter">SpaceFighter by BarbosaLeo</a></iframe>
+            </div>
+            -->
+            <div>
+                <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #828080"></canvas>
+                    <script src="Build/InfiniteHangar.loader.js"></script>
+                    <script>
+                      createUnityInstance(document.querySelector("#unity-canvas"), {
+                        dataUrl: "Build/InfiniteHangar.data.gz",
+                        frameworkUrl: "Build/InfiniteHangar.framework.js.gz",
+                        codeUrl: "Build/InfiniteHangar.wasm.gz",
+                        streamingAssetsUrl: "StreamingAssets",
+                        companyName: "DefaultCompany",
+                        productName: "Infinite Hangar",
+                        productVersion: "0.1",
+                        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+                        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+                      });
+                    </script>
+            </div>
+            <!-- canvas vai aqui -->
+        </div>
+        <div class="base">
+            <b style="font-size: xx-large; padding-bottom: 2%;">Contate-me: </b><br>
+            <i class="fas fa-envelope" style="padding: 1%;"></i><b> leonardo8544@gmail.com<b><br>
+            <i class="fab fa-linkedin" style="padding: 1%;"></i><a href="https://www.linkedin.com/in/leonardo-barbosa-3b4555167/"target="_blank" rel="noopener noreferrer"> Leonardo Barbosa</a><br>
+            <i class="fab fa-github" style="padding: 1%;"></i><a href="https://github.com/BarbosaLeo" target="_blank" rel="noopener noreferrer"> github.com/BarbosaLeo</a><br>
+        </div>
+    </body>
+</html>
