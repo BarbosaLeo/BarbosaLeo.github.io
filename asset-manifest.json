@@ -1,13 +1,13 @@
 {
-  "main.css": "/BarbosaLeo.github.io/static/css/main.5349a003.chunk.css",
-  "main.js": "/BarbosaLeo.github.io/static/js/main.e5533213.chunk.js",
-  "main.js.map": "/BarbosaLeo.github.io/static/js/main.e5533213.chunk.js.map",
-  "runtime~main.js": "/BarbosaLeo.github.io/static/js/runtime~main.57627934.js",
-  "runtime~main.js.map": "/BarbosaLeo.github.io/static/js/runtime~main.57627934.js.map",
-  "static/js/2.8808d590.chunk.js": "/BarbosaLeo.github.io/static/js/2.8808d590.chunk.js",
-  "static/js/2.8808d590.chunk.js.map": "/BarbosaLeo.github.io/static/js/2.8808d590.chunk.js.map",
-  "index.html": "/BarbosaLeo.github.io/index.html",
-  "precache-manifest.74e3ab38e51bef78c921dd78492c5231.js": "/BarbosaLeo.github.io/precache-manifest.74e3ab38e51bef78c921dd78492c5231.js",
-  "service-worker.js": "/BarbosaLeo.github.io/service-worker.js",
-  "static/css/main.5349a003.chunk.css.map": "/BarbosaLeo.github.io/static/css/main.5349a003.chunk.css.map"
+  "main.css": "/static/css/main.5349a003.chunk.css",
+  "main.js": "/static/js/main.e5533213.chunk.js",
+  "main.js.map": "/static/js/main.e5533213.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/js/2.8808d590.chunk.js": "/static/js/2.8808d590.chunk.js",
+  "static/js/2.8808d590.chunk.js.map": "/static/js/2.8808d590.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.2cb128493a597494b62366f13d89533b.js": "/precache-manifest.2cb128493a597494b62366f13d89533b.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.5349a003.chunk.css.map": "/static/css/main.5349a003.chunk.css.map"
 }
