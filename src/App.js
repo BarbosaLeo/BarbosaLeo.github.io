@@ -2,6 +2,7 @@ import './App.css';
 import Button from './Button';
 import ImageCollection from './ImageCollection';
 import Section from './Section';
+import React from 'react';
 
 
 const renderImageData = [
