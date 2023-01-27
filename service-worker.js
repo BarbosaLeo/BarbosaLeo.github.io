@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/BarbosaLeo.github.io/precache-manifest.e5113006162b4e19d727b5de43101fd0.js"
+  "/BarbosaLeo.github.io/precache-manifest.74e3ab38e51bef78c921dd78492c5231.js"
 );
 
 workbox.clientsClaim();

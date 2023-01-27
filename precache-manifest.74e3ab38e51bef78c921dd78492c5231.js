@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/BarbosaLeo.github.io/static/js/2.8808d590.chunk.js"
   },
   {
-    "revision": "764637f8ea692a538740e8e93126a754",
+    "revision": "56379228a2d23c98db1091bb629667ff",
     "url": "/BarbosaLeo.github.io/index.html"
   }
 ];
