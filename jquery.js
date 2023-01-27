@@ -1,5 +1,0 @@
-$(function){
-    //funtions goes here!!
-
-    
-}

@@ -3,52 +3,53 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./Style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="jquery.js"></script>
-    <script src="scripts.js"></script>
+    <script src="./Scripts.js"></script>
+    <script src="./Index.js"></script>
 
 </head>
     <body>
+
+        <div id="root"></div>
+
         <!-- <div class="header">
             <a href="#">[PLACEHOLDER]</a>
         </div> -->
-        <div class="bg1">
-            <h1 class="quote">"Everything here</h1>
-            <h1 class="quote">is made by me."</h1>
-            <p class="author">- Me</p>
-        </div>
+        
         <div class="main">
             <h2>"Hello world!!"</h2>
 
             <h2>Some of my 3D models - Blender3D</h2>
             <div class="row">
                 <div class="images">
-                    <img id="img" src="img/extinguisher_render.png">
-                    <img id="img" src="img/f15_render.png">
-                    <img id="img" src="img/SimpleBow_render.png">
-                    <img id="img" src="img/Jet_render.png">
-                    <img id="img" src="img/f5-tiger_render.png">
+                    <img id="img" src="./Public/img/extinguisher_render.png">
+                    <img id="img" src="./Public/img/f15_render.png">
+                    <img id="img" src="./Public/img/SimpleBow_render.png">
+                    <img id="img" src="./Public/img/Jet_render.png">
+                    <img id="img" src="./Public/img/f5-tiger_render.png">
                 </div>
             </div>
             <div class="row">
                 <h1>Unity Projects</h1>
                 <h3>WIP - from may/2021 to current time</h1>
                 <div class="images">
-                    <img id="img" src="img/game_basic_cycle.gif">
-                    <img id="img" src="img/dash_working.gif">
-                    <img id="img" src="img/camera_test_pos.gif">
+                    <img id="img" src="./Public/img/game_basic_cycle.gif">
+                    <img id="img" src="./Public/img/dash_working.gif">
+                    <img id="img" src="./Public/img/camera_test_pos.gif">
                 </div>
             </div>
 
             <div class="row">
                 <h3>Hangar showcase and customization (2020)</h3>
                 <div class="images">
-                    <img id="img" src="img/hangar_showcase.gif">
-                    <img id="img" src="img/hangar_customize.gif">
+                    <img id="img" src="./Public/img/hangar_showcase.gif">
+                    <img id="img" src="./Public/img/hangar_customize.gif">
                 </div>
             </div>
             
@@ -71,8 +72,8 @@
                 <script src="Build/InfiniteHangar.loader.js"></script>
                 <script>
                     createUnityInstance(document.querySelector("#unity-canvas"), {
-                        dataUrl: "Build/InfiniteHangar.data.unityweb",
-                        frameworkUrl: "Build/InfiniteHangar.framework.js.unityweb",
+                        dataUrl: "/Public/Build/InfiniteHangar.data.unityweb",
+                        frameworkUrl: "/PublicBuild/InfiniteHangar.framework.js.unityweb",
                         codeUrl: "Build/InfiniteHangar.wasm.unityweb",
                         streamingAssetsUrl: "StreamingAssets",
                         companyName: "DefaultCompany",
