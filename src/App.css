@@ -23,21 +23,31 @@
   color: #61dafb;
 }
 
+.Main{
+  display: inline;
+  width: 100%;
+}
+
 .Section{
   background-color:#282c34;
   border-radius: 6px;
   border-color: #61dafb;
-  align-items: center;
   margin: 2%;
   padding: 10px;
 }
 
-.ImageList{
-  background-color:#282c34;
-  border-radius: 6px;
-  border-color: #61dafb;
-  margin: 2%;
+ul{
+  display: flex;
+}
+
+li{
+  flex: 33.33%;
+}
+
+.image{
+  border-radius: 15px;
   padding: 10px;
+  width: 95%;
 }
 
 .Profile-picture {
@@ -90,7 +100,7 @@
   padding: 20px;
   padding-left: 5%;
   padding-right: 5%;
-  width: fit-content;
+  width: 400px;
   transition: all .5s;
   cursor: pointer;
   margin: 5px;
