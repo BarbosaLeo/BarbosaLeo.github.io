@@ -1,6 +1,7 @@
 import './App.css';
 import ImageCollection from './ImageCollection';
 import Section from './Section';
+import Button from './Button';
 import React, { useEffect, useState } from 'react';
 import { Collapse } from 'bootstrap';
 
@@ -31,7 +32,7 @@ const renderImageData = [
 ]
 
 
-function CollapseDemo() {
+function CollapseContentButton() {
   var [toggle, setToggle] = useState(false);
 
   useEffect(() => {
@@ -41,30 +42,13 @@ function CollapseDemo() {
   })
 
   return (
-    <div className='Main'>
-        <button className="btn" onClick={()=> setToggle(toggle => !toggle)}>
-          Ver meus projetos
-        </button>
-
-        <div className='collapse' id="collapseTarget">
-          <Section
-              title="Um titulo bom"
-              subtitle="Subtitulo incrível"
-            >
-
-            {
-              renderImageData.map(function(item){
-                return(
-                  <ImageCollection
-                    imageURL={item.imageURL}
-                    alt={item.alt}
-                  />
-                );
-              })
-            }
-
-          </Section>
-        </div>
+    <div className='Button'>
+        <Button 
+          className="btn" 
+          btnContent={
+            toggle? "Ocultar projetos" : "Ver meus Projetos" 
+          } 
+          onClick={() => setToggle(toggle => !toggle)}/>
     </div>
   )
 }
@@ -72,25 +56,42 @@ function CollapseDemo() {
 
 function App() {
 
-  const [mounted, setMounted] = useState(true);
+  const [mounted] = useState(true);
 
   return (
     <div className="App">
-      <main className="App-header">
+      <header className="App-header" >
 
         <div className='Profile-picture'/>
         <p>
           Olá, seja bem vindo.
         </p>
-        {/* <Button btnContent="Ver meus Projetos"/> */}
-
         {
           mounted &&
           <div>
-            <CollapseDemo/>
+            <CollapseContentButton/>
           </div>
-          
+            
         }
+      </header>
+      <main className='collapse' id='collapseTarget'>
+        <Section
+            title="Um titulo bom"
+            subtitle="Subtitulo incrível"
+        >
+
+        {
+          renderImageData.map(function(item){
+            return(
+              <ImageCollection
+                imageURL={item.imageURL}
+                alt={item.alt}
+              />
+            );
+          })
+        }
+
+        </Section>
       </main>
     </div>
   );
