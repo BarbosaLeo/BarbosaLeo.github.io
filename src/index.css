@@ -1,3 +1,32 @@
+:root{
+  --color-background: #f4f5f6;
+  --color-background-section: #f4f5f6;
+  --color-background-button: rgb(227, 227, 228);
+  --color-border: #cacfd5;
+  --color-text-default: #0b1016;
+  --color-base: #f4f5f6;
+  --color-accent: #ba0d37;
+  --color-link: #61dafb;
+  --color-button: #0b1016;
+}
+
+@media (prefers-color-scheme: dark){
+:root{
+    --color-background: #282c34;
+    --color-background-section: #282c34;
+    --color-background-button: #282c34;
+    --color-border: #697278;
+    --color-text-default: #F0F2F3;
+    --color-base: #293238;
+    --color-accent: #ec1a62;
+    --color-link: #61dafb;
+    --color-button: aqua;
+    
+  }
+p {
+  word-spacing: .05em; }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,8 +34,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  background-color: #282c34;
+
+  background-color: var(--color-background);
+  color: var(--color-text-default);
 }
 
 code {

@@ -1,6 +1,6 @@
 
 .App {
-  background-color: #282c34;
+  background-color: var(--color-background);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,22 +16,37 @@
 }
 
 .App-header {
-  background-color: #282c34; 
+  background-color: var(--color-background); 
   height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--color-text-default);
+}
+
+.App-header-div{
+  display: inline-block;
+}
+
+.Dark-mode-btn{
+  border: none;
+  color: var(--color-button);
+  background-color: var(--color-background);
+  cursor: pointer;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+#collapseTarget{
+  background-color: var(--color-background-section);
+}
+
 .Section{
-  background-color:#282c34;
+  background-color:var(--color-background-section);
   border-radius: 6px;
   border-color: #61dafb;
   align-items: center;
@@ -39,11 +54,28 @@
   margin-left: 20%;
   margin-right: 20%;
   padding: 10px;
-  color: white;
+  color: var(--color-text-default);
+}
+
+.Section-children{
+  display: inline-flex;
+  margin-bottom: 2%;
 }
 
 .Paragraph{
+  padding-left: 40px; padding-right: 40px;
   text-align: justify;
+}
+
+a:link, a:visited{
+  color: var(--color-text-default);
+  text-decoration: none;
+  text-align: center;
+}
+
+a:active{
+  color: cyan;
+  text-decoration: none;
 }
 
 .Image-container{
@@ -60,17 +92,13 @@
   height: 10vmin;
 }
 
-.Foot{
+.App-footer{
   display: flex;
   flex-direction: column;
   height: fit-content;
 }
-.Foot::before{
+.App-footer::before{
   padding-top: 20px;
-}
-
-.About{
-  text-align: left;
 }
 
 .image{
@@ -121,9 +149,15 @@
   height: 12vmin
 }
 
-.Socials-image{
-  margin-left: 10px;
-  margin-right: 10px;
+.Svg-footer{
+  display: block;
+  width: 5vmin;
+  height: auto;
+  margin: 1em;
+}
+
+.Svg-footer path{
+  fill: var(--color-text-default);
 }
 
 .Button{
@@ -131,15 +165,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-text-default);
 }
 
 .falseBtn,
 .trueBtn{
   border-radius: 4px;
   border: none;
-  color: aqua;
-  background-color: #282c34;
+  color: var(--color-button);
+  background-color: var(--color-background-button);
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -194,3 +228,9 @@
   right: 48%;
 }
 
+
+.Note{
+  color: #77839b;
+  text-align: center;
+  size: 10px;
+}
