@@ -5,6 +5,8 @@
   display: flex;
   flex-direction: column;
   height: 100vmin;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,8 +16,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: fit-content;
+  background-color: #282c34; 
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,44 +30,56 @@
   color: #61dafb;
 }
 
-#collapseTarget{
-  
-}
-
-.Button{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
 .Section{
   background-color:#282c34;
   border-radius: 6px;
   border-color: #61dafb;
-  min-height: 50vmin;
+  align-items: center;
   margin: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
   padding: 10px;
   color: white;
 }
 
-ul{
-  display: flex;
-
+.Paragraph{
+  text-align: justify;
 }
 
-li{
+.Image-container{
+  display: inline-block;
   list-style-type: none;
-  flex: 33.33%;
+  padding: 10px;
+  margin: 2px;
+  height: 8vmin;
+  transition: .3s;
 }
 
+.Image-container:hover{
+  cursor: pointer;
+  height: 10vmin;
+}
+
+.Foot{
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+.Foot::before{
+  padding-top: 20px;
+}
+
+.About{
+  text-align: left;
+}
 
 .image{
-  border-radius: 15px;
-  padding: 10px;
-  width: 95%;
+  height: inherit;
+  width: inherit;
+  border-radius: 20px;
+  transition: .3s;
 }
+
 
 .Profile-picture {
   --b:3px;  /* border width*/
@@ -107,7 +121,21 @@ li{
   height: 12vmin
 }
 
-.btn{
+.Socials-image{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.Button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.falseBtn,
+.trueBtn{
   border-radius: 4px;
   border: none;
   color: aqua;
@@ -123,14 +151,15 @@ li{
   margin: 5px;
 }
 
-.btn span{
+.falseBtn span,
+.trueBtn span{
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: .5s;
 }
 
-.btn span::after{
+.falseBtn span::after{
   content: '\00bb';
   transform: rotate(90deg);
   position: absolute;
@@ -140,21 +169,28 @@ li{
   transition: .5s;
 }
 
-.btn:hover span{
+.trueBtn span::after{
+  content: '\00bb';
+  transform: rotate(-90deg);
+  position: absolute;
+  opacity: 0;
+  top: 30px;
+  right: 48%;
+  transition: .5s;
+}
+
+.falseBtn:hover span,
+.trueBtn:hover span{
   padding-bottom: 15px;
 }
 
-.btn:hover span::after{
+.falseBtn:hover span::after{
   opacity: 1;
   right: 45%;
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.trueBtn:hover span::after{
+  opacity: 1;
+  right: 48%;
 }
+
